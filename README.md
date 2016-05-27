@@ -10,5 +10,3 @@
 
  - Inserte la (o las) llave(s) publica(s) en el archivo: `package/os/home/rundeck/.ssh/authorized_keys`.
  - Creé un release de este paquete e instálelo los hosts que quiere controlar por medio de Rundeck.
-=======
-Crea al usuario rundeck y copia la llave pública.
