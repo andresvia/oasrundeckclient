@@ -1,0 +1,13 @@
+### que se le va a permitir hacer al usuario de rundeck?
+
+# Ejemplos
+
+## En el host de DB permitirle sacar backup de la base de datos como el usuario de la base
+
+# rundeck host_db = (oracle) /usr/bin/...
+
+## En los hosts web permitirle ver el archivo de log
+
+# rundeck host_web = (www) /usr/bin/tail -10 /var/log/apache/access.log
+
+# etc

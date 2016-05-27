@@ -1,0 +1,22 @@
+#!/bin/bash
+set -eu
+
+# home according to the package and according to the system
+package_home="/home/rundeck"
+real_home=$(awk -F: '$1=="rundeck"{print $6;exit}' /etc/passwd)
+
+# location of auth keys by default is the package location (initial real)
+package_keys="${package_home}/.ssh/authorized_keys"
+real_keys="$package_keys"
+
+# unless, the real is different
+if [ "$real_home" != "$package_home" ]
+then
+  mkdir -pv "${real_home}/.ssh"
+  real_keys="${real_home}/.ssh/authorized_keys"
+  cp "$package_keys" "$real_keys"
+fi
+
+# in any case change this
+chown -v rundeck:rundeck "$real_keys"
+chmod -v 600 "$real_keys"

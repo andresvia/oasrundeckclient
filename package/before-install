@@ -1,0 +1,13 @@
+#!/bin/bash
+
+user_exist=no
+
+if egrep '^rundeck:' /etc/passwd > /dev/null
+then
+  user_exist=yes
+fi
+
+if [ "$user_exist" = no ]
+then
+  useradd -d /home/rundeck -m -r -s /bin/bash rundeck
+fi
