@@ -1,2 +1,2 @@
 # oasrundeckclient
-Crea al usuario rundeck y copia la llave publica
+Crea al usuario rundeck y copia la llave pública.
